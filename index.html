@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ivanna & Nicolás</title>
+    <style>
+      body, html {
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+      }
+      .page {
+        width: 100vw;
+        height: 100vh;
+        background-size: cover;
+        background-position: center;
+        position: relative;
+      }
+      .link {
+        position: absolute;
+        width: 60%;
+        height: 5%;
+        text-indent: -9999px;
+      }
+      .hidden { display: none; }
+    </style>
+  </head>
+  <body>
+    <div id="carousel">
+      <div class="page" style="background-image: url('page_1.png');" onclick="nextPage()">
+        <a class="link" href="https://maps.app.goo.gl/LK2WM1aVg6JmSaDE6" target="_blank" style="top: 68%; left: 20%;"></a>
+      </div>
+      <div class="page hidden" style="background-image: url('page_2.png');" onclick="nextPage()"></div>
+      <div class="page hidden" style="background-image: url('page_3.png');" onclick="nextPage()">
+        <a class="link" href="https://ar.pinterest.com/ivannaemejpg/invitadasos/" target="_blank" style="top: 72%; left: 20%;"></a>
+        <a class="link" href="https://open.spotify.com/playlist/78dXjt4cWZ6Juiy7iuWSpe?si=91GLXe6kQ3KMKiV3Ds5rgw&pi=jzIskr2KS0GXV" target="_blank" style="top: 77%; left: 20%;"></a>
+      </div>
+      <div class="page hidden" style="background-image: url('page_4.png');" onclick="nextPage()">
+        <a class="link" href="https://forms.gle/1kUJdFvk83EX1D4o8" target="_blank" style="top: 62%; left: 20%;"></a>
+      </div>
+    </div>
+    <script>
+      let current = 0;
+      function nextPage() {
+        const pages = document.querySelectorAll('.page');
+        if (current < pages.length - 1) {
+          pages[current].classList.add('hidden');
+          current += 1;
+          pages[current].classList.remove('hidden');
+        }
+      }
+    </script>
+  </body>
+</html>

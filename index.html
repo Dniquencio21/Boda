@@ -1,0 +1,41 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ivanna & Nicolás - Invitación</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html, body { height: 100%; overflow: hidden; }
+        body { font-family: sans-serif; background: #000; }
+        .page { height: 100vh; width: 100vw; background-size: cover; background-position: center; position: relative; }
+        .carousel { display: flex; flex-direction: column; height: 100%; scroll-snap-type: y mandatory; overflow-y: scroll; }
+        .carousel .page { scroll-snap-align: start; flex-shrink: 0; }
+        .link-overlay { position: absolute; z-index: 10; }
+        audio { position: fixed; bottom: 10px; left: 10px; z-index: 999; }
+    </style>
+</head>
+<body>
+    <audio controls autoplay loop>
+        <source src="audio/Here Comes The Sun (2019 Mix).mp3" type="audio/mpeg">
+        Tu navegador no soporta audio.
+    </audio>
+    <div class="carousel">
+<div class="page" style="background-image: url('images/4bfcaf7f-d04d-4587-99e1-c692deb4b2ad-1.png');">
+</div>
+<div class="page" style="background-image: url('images/4bfcaf7f-d04d-4587-99e1-c692deb4b2ad-2.png');">
+  <a href="https://maps.app.goo.gl/LK2WM1aVg6JmSaDE6" class="link-overlay" style="position:absolute;top:60%;left:50%;width:30%;height:5%;" target="_blank"></a>
+</div>
+<div class="page" style="background-image: url('images/4bfcaf7f-d04d-4587-99e1-c692deb4b2ad-3.png');">
+  <a href="https://ar.pinterest.com/ivannaemejpg/invitadasos/" class="link-overlay" style="position:absolute;top:50%;left:10%;width:35%;height:5%;" target="_blank"></a>
+  <a href="https://open.spotify.com/playlist/78dXjt4cWZ6Juiy7iuWSpe?si=91GLXe6kQ3KMKiV3Ds5rgw&pi=jzIskr2KS0GXV" class="link-overlay" style="position:absolute;top:50%;left:55%;width:35%;height:5%;" target="_blank"></a>
+</div>
+<div class="page" style="background-image: url('images/4bfcaf7f-d04d-4587-99e1-c692deb4b2ad-4.png');">
+  <a href="https://drive.google.com/file/d/17UukvODz8A8pKVosAwdadXPfyx6JQkp8/view?usp=drivesdk" class="link-overlay" style="position:absolute;top:50%;left:10%;width:35%;height:5%;" target="_blank"></a>
+  <a href="https://forms.gle/pqHMEesC8pDsPcTV6" class="link-overlay" style="position:absolute;top:50%;left:55%;width:35%;height:5%;" target="_blank"></a>
+</div>
+
+    </div>
+</body>
+</html>

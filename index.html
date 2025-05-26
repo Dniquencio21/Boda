@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Invitación Ivanna & Nicolás</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<section class="slide" style="background-image: url('images/page1.png');"></section>
+
+<section class="slide" style="background-image: url('images/page2.png');">
+  <a href="https://maps.app.goo.gl/LK2WM1aVg6JmSaDE6" target="_blank"
+     class="link-invisible"
+     style="left: 36.1%; top: 71.2%; width: 27.8%; height: 2.3%;"
+     title="Cómo llegar"></a>
+</section>
+
+<section class="slide" style="background-image: url('images/page3.png');">
+  <a href="https://ar.pinterest.com/ivannaemejpg/invitadasos/" target="_blank"
+     class="link-invisible"
+     style="left: 38.8%; top: 40.0%; width: 23.6%; height: 1.9%;"
+     title="Inspirate"></a>
+  <a href="https://open.spotify.com/playlist/78dXjt4cWZ6Juiy7iuWSpe?si=91GLXe6kQ3KMKiV3Ds5rgw&pi=jzIskr2KS0GXV" target="_blank"
+     class="link-invisible"
+     style="left: 43.9%; top: 74.5%; width: 14.6%; height: 1.9%;"
+     title="Playlist"></a>
+</section>
+
+<section class="slide" style="background-image: url('images/page4.png');">
+  <a href="https://drive.google.com/file/d/17UukvODz8A8pKVosAwdadXPfyx6JQkp8/view?usp=drivesdk" target="_blank"
+     class="link-invisible"
+     style="left: 40.8%; top: 39.5%; width: 18.2%; height: 1.9%;"
+     title="Tu regalo"></a>
+  <a href="https://forms.gle/pqHMEesC8pDsPcTV6" target="_blank"
+     class="link-invisible"
+     style="left: 38.2%; top: 64.3%; width: 23.3%; height: 1.9%;"
+     title="Confirmar"></a>
+</section>
+
+
+<button id="play-button" class="music-button">🎵</button>
+<audio id="background-music" src="audio/music.mp3"></audio>
+<script>
+document.getElementById("play-button").addEventListener("click", function() {
+    const audio = document.getElementById("background-music");
+    audio.play();
+    this.classList.add("fade-out");
+    setTimeout(() => {
+        this.style.display = "none";
+    }, 1000);
+});
+</script>
+
+</body>
+</html>

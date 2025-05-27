@@ -13,7 +13,8 @@ html, body {
 
 .swiper-slide img {
   heigh: 100%;
-  object-fit: fill;
+  width: 100%;
+  object-fit: scale-down;
 }
 
 .music-button {

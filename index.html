@@ -1,0 +1,42 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Invitación de Boda</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="swiper">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide"><img src="images/page1.png" alt="Página 1" /></div>
+      <div class="swiper-slide"><img src="images/page2.png" alt="Página 2" /></div>
+      <div class="swiper-slide"><img src="images/page3.png" alt="Página 3" /></div>
+      <div class="swiper-slide"><img src="images/page4.png" alt="Página 4" /></div>
+    </div>
+  </div>
+
+  <button id="play-button" class="music-button">🎵</button>
+  <audio id="background-music" src="audio/music.mp3"></audio>
+
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script>
+    const swiper = new Swiper('.swiper', {
+      direction: 'horizontal',
+      loop: false,
+      allowTouchMove: true
+    });
+
+    document.getElementById("play-button").addEventListener("click", function() {
+      const audio = document.getElementById("background-music");
+      audio.play();
+      this.classList.add("fade-out");
+      setTimeout(() => {
+        this.style.display = "none";
+      }, 1000);
+    });
+  </script>
+</body>
+</html>

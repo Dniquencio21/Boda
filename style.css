@@ -12,7 +12,7 @@ html, body {
 }
 
 .swiper-slide img {
-  width: 100vw;
+  height: 100vw;
   object-fit: cover;
 }
 

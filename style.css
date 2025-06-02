@@ -12,7 +12,7 @@ html, body {
 }
 
 .swiper-slide img {
-  object-fit: contain;
+  object-fit: scale-down;
 }
 
 .music-button {

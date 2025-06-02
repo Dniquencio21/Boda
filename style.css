@@ -1,1 +1,85 @@
+/* Reset general */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
+html, body {
+  width: 100vw;
+  height: 100dvh;
+  overflow: hidden;
+  background-color: black;
+  touch-action: manipulation;
+}
+
+/* Swiper básico */
+.swiper, .swiper-wrapper, .swiper-slide {
+  width: 100vw;
+  height: 100dvh;
+}
+
+.swiper-slide {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Imagen como fondo pantalla completa */
+.swiper-slide img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100dvh;
+  object-fit: cover;
+  user-select: none;
+  pointer-events: none;
+}
+
+/* Links invisibles posicionados, ampliados un 30% */
+.link-zone {
+  position: absolute;
+  display: block;
+  z-index: 10;
+  background-color: rgba(255, 0, 0, 0.3); /* Solo para prueba */
+  border: 1px solid rgba(255, 0, 0, 0.6);
+}
+
+/* Ampliar el área clicable un 30% respecto al tamaño original */
+.link-zone[style] {
+  /* Parseamos estilos inline para agrandar con calc() */
+  /* Se amplía left y top desplazando para centrar, y ancho y alto multiplicando */
+  /* NOTA: para estilos inline específicos, esto solo funcionará si el navegador interpreta bien */
+}
+
+/* Para hacer el aumento con JS sería ideal, pero acá hacemos el truco con CSS */
+.link-zone {
+  /* Aumentamos tamaño y corregimos posición */
+  /* Solo funciona si podés editar estilos inline con JS, por CSS puro es muy limitado */
+  /* Entonces, la recomendación real es modificar inline styles en HTML o via JS */
+}
+
+/* Mostrar solo links de slide activo */
+.swiper-slide:not(.swiper-slide-active) .link-zone {
+  display: none;
+}
+
+/* Botón de música */
+.music-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: rgba(255, 255, 255, 0.8);
+  border: none;
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  font-size: 48px;
+  cursor: pointer;
+  z-index: 9999;
+  transition: opacity 1s ease;
+}
+
+.music-button.fade-out {
+  opacity: 0;
+}

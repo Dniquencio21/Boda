@@ -14,7 +14,7 @@ html, body {
 .swiper-slide img {
   width: 100vw;
   height: 100dvh;
-  object-fit: contain;
+  object-fit: cover;
   background-color: #ffffff;
   box-sizing: border-box;
   touch-action: manipulation;

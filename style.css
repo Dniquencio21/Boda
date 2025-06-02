@@ -27,7 +27,7 @@ body {
 .swiper-slide img {
   width: 100%;
   height: 100%;
-  object-fit: contain; /* Cambiar a cover para probar la otra opción */
+  object-fit: cover; /* Cambiar a cover para probar la otra opción */
   user-select: none;
   pointer-events: none;
   display: block;

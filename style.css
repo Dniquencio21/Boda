@@ -12,7 +12,7 @@ html, body {
 }
 
 .swiper-slide img {
-  height: 100min;
+  height: 100vmin;
 }
 
 .music-button {

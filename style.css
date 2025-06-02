@@ -24,8 +24,30 @@ html, body {
   overflow: hidden;
 }
 
-/* Imagen como fondo pantalla completa */
-.swiper-slide img {
+/* Animación de movimiento suave horizontal para la primera imagen */
+@keyframes slide-slight {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(-8%);
+  }
+}
+
+.swiper-slide:first-child img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100dvh;
+  object-fit: cover;
+  user-select: none;
+  pointer-events: none;
+  animation: slide-slight 3.5s ease-in-out infinite;
+}
+
+/* Otras imágenes */
+.swiper-slide:not(:first-child) img {
   position: absolute;
   top: 0;
   left: 0;
@@ -36,45 +58,47 @@ html, body {
   pointer-events: none;
 }
 
-/* Links invisibles posicionados, con width y height +30% */
+/* Links invisibles posicionados */
 .link-zone {
   position: absolute;
   display: block;
   z-index: 10;
-  /*background-color: rgba(255, 0, 0, 0.3);  
-  border: 1px solid rgba(255, 0, 0, 0.6);*/
+  /*background-color: rgba(255, 0, 0, 0.3);  solo para prueba */
+  /*border: 1px solid rgba(255, 0, 0, 0.6);  solo para prueba */
 }
 
-/* Ampliamos el width y height directo en línea en HTML para más control */
-/* Pero si querés también lo podés hacer en CSS, si usás clases diferentes */
-/* Aquí no modificamos width/height en CSS porque están en estilos inline */
-
-/* Ocultar links no activos */
 .swiper-slide:not(.swiper-slide-active) .link-zone {
   display: none;
 }
 
-/* Botón de música */
+/* Botón de música mejorado y animado */
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.15);
+  }
+}
+
 .music-button {
   position: fixed;
   bottom: 20px;
   right: 20px;
-  background-color: rgba(255, 255, 255, 0.8);
+  background-color: rgba(255, 255, 255, 0.6);
   border: none;
   border-radius: 50%;
-  width: 120px;
-  height: 120px;
-  font-size: 48px;
+  width: 80px;
+  height: 80px;
+  font-size: 36px;
   cursor: pointer;
   z-index: 9999;
-  transition: opacity 1s ease;
-}
-@keyframes sway {
-  0% { transform: translateX(0); }
-  50% { transform: translateX(-20px); }
-  100% { transform: translateX(0); }
+  transition: opacity 1s ease, transform 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  animation: pulse 2.5s ease-in-out infinite;
 }
 
-.swiper-slide:first-child img {
-  animation: sway 3s ease-in-out infinite;
+.music-button.fade-out {
+  opacity: 0;
+  pointer-events: none;
 }

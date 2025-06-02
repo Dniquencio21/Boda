@@ -39,4 +39,8 @@ html, body {
   
 .swiper-slide:not(.swiper-slide-active) .link-zone {
   display: none;
+
+.link-zone {
+  background-color: rgba(255, 0, 0, 0.3); /* rojo semitransparente */
+  border: 1px solid rgba(255, 0, 0, 0.6); /* borde rojo más fuerte */
 }

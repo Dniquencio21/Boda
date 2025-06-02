@@ -36,30 +36,20 @@ html, body {
   pointer-events: none;
 }
 
-/* Links invisibles posicionados, ampliados un 30% */
+/* Links invisibles posicionados, con width y height +30% */
 .link-zone {
   position: absolute;
   display: block;
   z-index: 10;
-  background-color: rgba(255, 0, 0, 0.3); /* Solo para prueba */
+  background-color: rgba(255, 0, 0, 0.3); /* Solo para prueba, borrar luego */
   border: 1px solid rgba(255, 0, 0, 0.6);
 }
 
-/* Ampliar el área clicable un 30% respecto al tamaño original */
-.link-zone[style] {
-  /* Parseamos estilos inline para agrandar con calc() */
-  /* Se amplía left y top desplazando para centrar, y ancho y alto multiplicando */
-  /* NOTA: para estilos inline específicos, esto solo funcionará si el navegador interpreta bien */
-}
+/* Ampliamos el width y height directo en línea en HTML para más control */
+/* Pero si querés también lo podés hacer en CSS, si usás clases diferentes */
+/* Aquí no modificamos width/height en CSS porque están en estilos inline */
 
-/* Para hacer el aumento con JS sería ideal, pero acá hacemos el truco con CSS */
-.link-zone {
-  /* Aumentamos tamaño y corregimos posición */
-  /* Solo funciona si podés editar estilos inline con JS, por CSS puro es muy limitado */
-  /* Entonces, la recomendación real es modificar inline styles en HTML o via JS */
-}
-
-/* Mostrar solo links de slide activo */
+/* Ocultar links no activos */
 .swiper-slide:not(.swiper-slide-active) .link-zone {
   display: none;
 }
@@ -78,8 +68,4 @@ html, body {
   cursor: pointer;
   z-index: 9999;
   transition: opacity 1s ease;
-}
-
-.music-button.fade-out {
-  opacity: 0;
 }

@@ -12,8 +12,8 @@ html, body {
 }
 
 .swiper-slide img {
-  width: 100vw;
-  object-fit: none;
+  height: 100vw;
+  object-fit: fill;
 }
 
 .music-button {

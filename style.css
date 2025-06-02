@@ -69,3 +69,12 @@ html, body {
   z-index: 9999;
   transition: opacity 1s ease;
 }
+@keyframes sway {
+  0% { transform: translateX(0); }
+  50% { transform: translateX(-20px); }
+  100% { transform: translateX(0); }
+}
+
+.swiper-slide:first-child img {
+  animation: sway 3s ease-in-out infinite;
+}

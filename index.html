@@ -2,13 +2,15 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Invitación de Boda</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-  <link rel="stylesheet" href="style.css" />
-
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+  />
   <style>
-    html, body {
+    html,
+    body {
       height: 100%;
       margin: 0;
       padding: 0;
@@ -17,30 +19,38 @@
       touch-action: manipulation;
     }
 
-    .swiper, .swiper-slide {
+    .swiper,
+    .swiper-wrapper,
+    .swiper-slide {
       width: 100vw;
       height: 100vh;
     }
 
     .swiper-slide {
       position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #ffffff;
+      overflow: hidden;
     }
 
     .swiper-slide img {
       width: 100%;
       height: 100%;
-      object-fit: cover;
+      object-fit: contain; /* <-- Cambiar aquí a 'cover' para probar otra opción */
+      user-select: none;
+      pointer-events: none;
       display: block;
-      background-color: #ffffff;
-      box-sizing: border-box;
     }
 
     .link-zone {
       position: absolute;
       display: block;
       z-index: 10;
-      background-color: rgba(255, 0, 0, 0.3); /* rojo semitransparente */
-      border: 1px solid rgba(255, 0, 0, 0.6); /* borde rojo más fuerte */
+      background-color: rgba(255, 0, 0, 0.3);
+      border: 1px solid rgba(255, 0, 0, 0.6);
+      cursor: pointer;
     }
 
     .swiper-slide:not(.swiper-slide-active) .link-zone {
@@ -70,7 +80,6 @@
 <body>
   <div class="swiper">
     <div class="swiper-wrapper">
-
       <!-- Página 1 -->
       <div class="swiper-slide">
         <img src="images/page1.png" alt="Página 1" />
@@ -79,38 +88,57 @@
       <!-- Página 2 -->
       <div class="swiper-slide">
         <img src="images/page2.png" alt="Página 2" />
-        <a href="https://maps.app.goo.gl/LK2WM1aVg6JmSaDE6" target="_blank"
+        <a
+          href="https://maps.app.goo.gl/LK2WM1aVg6JmSaDE6"
+          target="_blank"
           class="link-zone"
           style="left: 36.1%; top: 71.2%; width: 27.8%; height: 2.3%;"
-          title="Cómo llegar"></a>
+          title="Cómo llegar"
+          ></a
+        >
       </div>
 
       <!-- Página 3 -->
       <div class="swiper-slide">
         <img src="images/page3.png" alt="Página 3" />
-        <a href="https://ar.pinterest.com/ivannaemejpg/invitadasos/" target="_blank"
+        <a
+          href="https://ar.pinterest.com/ivannaemejpg/invitadasos/"
+          target="_blank"
           class="link-zone"
           style="left: 38.8%; top: 40.0%; width: 23.6%; height: 1.9%;"
-          title="Inspirate"></a>
-        <a href="https://open.spotify.com/playlist/78dXjt4cWZ6Juiy7iuWSpe?si=91GLXe6kQ3KMKiV3Ds5rgw&pi=jzIskr2KS0GXV" target="_blank"
+          title="Inspirate"
+          ></a
+        >
+        <a
+          href="https://open.spotify.com/playlist/78dXjt4cWZ6Juiy7iuWSpe?si=91GLXe6kQ3KMKiV3Ds5rgw&pi=jzIskr2KS0GXV"
+          target="_blank"
           class="link-zone"
           style="left: 43.9%; top: 74.5%; width: 14.6%; height: 1.9%;"
-          title="Playlist"></a>
+          title="Playlist"
+          ></a
+        >
       </div>
 
       <!-- Página 4 -->
       <div class="swiper-slide">
         <img src="images/page4.png" alt="Página 4" />
-        <a href="https://drive.google.com/file/d/17UukvODz8A8pKVosAwdadXPfyx6JQkp8/view?usp=drivesdk" target="_blank"
+        <a
+          href="https://drive.google.com/file/d/17UukvODz8A8pKVosAwdadXPfyx6JQkp8/view?usp=drivesdk"
+          target="_blank"
           class="link-zone"
           style="left: 40.8%; top: 39.5%; width: 18.2%; height: 1.9%;"
-          title="Tu regalo"></a>
-        <a href="https://forms.gle/pqHMEesC8pDsPcTV6" target="_blank"
+          title="Tu regalo"
+          ></a
+        >
+        <a
+          href="https://forms.gle/pqHMEesC8pDsPcTV6"
+          target="_blank"
           class="link-zone"
           style="left: 38.2%; top: 64.3%; width: 23.3%; height: 1.9%;"
-          title="Confirmar"></a>
+          title="Confirmar"
+          ></a
+        >
       </div>
-
     </div>
   </div>
 
@@ -119,20 +147,22 @@
 
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   <script>
-    const swiper = new Swiper('.swiper', {
-      direction: 'horizontal',
+    const swiper = new Swiper(".swiper", {
+      direction: "horizontal",
       loop: false,
-      allowTouchMove: true
+      allowTouchMove: true,
     });
 
-    document.getElementById("play-button").addEventListener("click", function() {
-      const audio = document.getElementById("background-music");
-      audio.play();
-      this.classList.add("fade-out");
-      setTimeout(() => {
-        this.style.display = "none";
-      }, 1000);
-    });
+    document
+      .getElementById("play-button")
+      .addEventListener("click", function () {
+        const audio = document.getElementById("background-music");
+        audio.play();
+        this.classList.add("fade-out");
+        setTimeout(() => {
+          this.style.display = "none";
+        }, 1000);
+      });
   </script>
 </body>
 </html>

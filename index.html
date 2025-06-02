@@ -5,6 +5,79 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Invitación de Boda</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+  <style>
+    /* Reset general */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      width: 100vw;
+      height: 100dvh;
+      overflow: hidden;
+      background-color: black;
+      touch-action: manipulation;
+    }
+
+    /* Swiper básico */
+    .swiper, .swiper-wrapper, .swiper-slide {
+      width: 100vw;
+      height: 100dvh;
+    }
+
+    .swiper-slide {
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Imagen como fondo pantalla completa */
+    .swiper-slide img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100dvh;
+      object-fit: cover;
+      user-select: none;
+      pointer-events: none;
+    }
+
+    /* Links invisibles posicionados */
+    .link-zone {
+      position: absolute;
+      display: block;
+      z-index: 10;
+      background-color: rgba(255, 0, 0, 0.3); /* Solo para prueba */
+      border: 1px solid rgba(255, 0, 0, 0.6);
+    }
+
+    .swiper-slide:not(.swiper-slide-active) .link-zone {
+      display: none;
+    }
+
+    /* Botón de música */
+    .music-button {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: rgba(255, 255, 255, 0.8);
+      border: none;
+      border-radius: 50%;
+      width: 120px;
+      height: 120px;
+      font-size: 48px;
+      cursor: pointer;
+      z-index: 9999;
+      transition: opacity 1s ease;
+    }
+
+    .music-button.fade-out {
+      opacity: 0;
+    }
+  </style>
 </head>
 <body>
   <div class="swiper">
@@ -53,6 +126,7 @@
     </div>
   </div>
 
+  <!-- Botón de música -->
   <button id="play-button" class="music-button">🎵</button>
   <audio id="background-music" src="audio/music.mp3"></audio>
 

@@ -1,62 +1,39 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Invitación - object-fit: contain</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-  <style>
-    html, body {
-      height: 100%;
-      margin: 0; padding: 0;
-      overflow: hidden;
-      background-color: black;
-    }
-    .swiper, .swiper-slide {
-      width: 100vw;
-      height: 100vh;
-    }
-    .swiper-slide {
-      position: relative;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      overflow: hidden;
-      background-color: #fff;
-    }
-    .swiper-slide img {
-      max-width: 100%;
-      max-height: 100%;
-      object-fit: contain; /* aquí el detalle */
-      display: block;
-    }
-    .link-zone {
-      position: absolute;
-      z-index: 10;
-      background-color: rgba(255, 0, 0, 0.3);
-      border: 1px solid rgba(255, 0, 0, 0.6);
-    }
-    .swiper-slide:not(.swiper-slide-active) .link-zone {
-      display: none;
-    }
-  </style>
-</head>
-<body>
-  <div class="swiper">
-    <div class="swiper-wrapper">
-      <div class="swiper-slide">
-        <img src="images/page1.png" alt="Página 1" />
-      </div>
-      <div class="swiper-slide">
-        <img src="images/page2.png" alt="Página 2" />
-        <a href="#" class="link-zone" style="left:36.1%; top:71.2%; width:27.8%; height:2.3%;"></a>
-      </div>
-      <!-- más slides aquí -->
-    </div>
-  </div>
-  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-  <script>
-    const swiper = new Swiper('.swiper', { direction: 'horizontal', loop: false });
-  </script>
-</body>
-</html>
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: black;
+  touch-action: manipulation;
+}
+
+.swiper, .swiper-slide {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden; /* oculta scroll horizontal */
+  position: relative;
+  display: flex;
+  justify-content: center; /* centra horizontal */
+  align-items: center;     /* centra vertical */
+}
+
+.swiper-slide img {
+  height: 100vh;  /* escala imagen al alto de pantalla */
+  width: auto;    /* ancho automático para mantener proporción */
+  object-fit: contain;
+  display: block;
+  user-select: none;
+  pointer-events: none; /* evita interferir con links */
+}
+
+.link-zone {
+  position: absolute;
+  display: block;
+  z-index: 10;
+  background-color: rgba(255, 0, 0, 0.3);
+  border: 1px solid rgba(255, 0, 0, 0.6);
+}
+
+.swiper-slide:not(.swiper-slide-active) .link-zone {
+  display: none;
+}

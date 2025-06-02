@@ -12,7 +12,8 @@ html, body {
 }
 
 .swiper-slide img {
-  background-size: contain;
+  height: 90vh
+  object-fit: contain;
 }
 
 .music-button {

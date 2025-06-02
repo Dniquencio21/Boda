@@ -12,7 +12,7 @@ html, body {
 }
 
 .swiper-slide img {
-  object-fit: none;
+  object-fit: fill;
 }
 
 .music-button {

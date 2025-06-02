@@ -1,4 +1,3 @@
-
 html, body {
   height: 100%;
   margin: 0;
@@ -11,13 +10,23 @@ html, body {
   height: 100vh;
 }
 
-.swiper-slide img {
-  width: 100vw;
-  height: 100dvh;
-  object-fit: cover;
-  background-color: #ffffff;
-  box-sizing: border-box;
-  touch-action: manipulation;
+.swiper-slide {
+  background-position: center center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: relative;
+}
+
+.link-zone {
+  position: absolute;
+  display: block;
+  z-index: 10;
+  background-color: rgba(255, 0, 0, 0.3); /* rojo visible */
+  border: 1px solid rgba(255, 0, 0, 0.6); /* borde más fuerte */
+}
+
+.swiper-slide:not(.swiper-slide-active) .link-zone {
+  display: none;
 }
 
 .music-button {
@@ -36,11 +45,4 @@ html, body {
 }
 .music-button.fade-out {
   opacity: 0;
-  
-.swiper-slide:not(.swiper-slide-active) .link-zone {
-  display: none;
-
-.link-zone {
-  background-color: rgba(255, 0, 0, 0.3); /* rojo semitransparente */
-  border: 1px solid rgba(255, 0, 0, 0.6); /* borde rojo más fuerte */
 }

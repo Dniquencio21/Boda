@@ -36,4 +36,7 @@ html, body {
 }
 .music-button.fade-out {
   opacity: 0;
+  
+.swiper-slide:not(.swiper-slide-active) .link-zone {
+  display: none;
 }

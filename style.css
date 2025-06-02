@@ -5,34 +5,34 @@ html, body {
   overflow: hidden;
   background-color: black;
   touch-action: manipulation;
+  /* Para evitar problemas con barras móviles */
+  min-height: 100vh;
 }
 
-.swiper, .swiper-slide {
+.swiper, .swiper-wrapper, .swiper-slide {
   width: 100vw;
   height: 100vh;
-}
-
-.swiper-slide {
-  background-position: center center;
-  background-size: contain;
-  background-repeat: no-repeat;
-  position: relative;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 .swiper-slide {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #ffffff;
-  overflow: hidden;
   position: relative;
+  overflow: hidden;
+  background-color: #ffffff;
 }
 
 .swiper-slide img {
-  max-width: 100%;
-  max-height: 100%;
+  width: 100%;
+  height: 100%;
   object-fit: contain;
   display: block;
+  user-select: none; /* evita que el usuario pueda seleccionar la imagen */
+  pointer-events: none; /* evita que la imagen interfiera con los clicks */
 }
 
 .link-zone {

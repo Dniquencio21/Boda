@@ -5,19 +5,27 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Invitación de Boda</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
   <style>
-    html, body {
-      height: 100%;
+    /* Reset general */
+    * {
       margin: 0;
       padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      width: 100vw;
+      height: 100dvh;
       overflow: hidden;
       background-color: black;
       touch-action: manipulation;
     }
 
+    /* Swiper básico */
     .swiper, .swiper-wrapper, .swiper-slide {
       width: 100vw;
-      height: 100vh;
+      height: 100dvh;
     }
 
     .swiper-slide {
@@ -25,29 +33,32 @@
       overflow: hidden;
     }
 
+    /* Imagen como fondo pantalla completa */
     .swiper-slide img {
       position: absolute;
       top: 0;
       left: 0;
       width: 100vw;
-      height: 100vh;
+      height: 100dvh;
       object-fit: cover;
       user-select: none;
-      pointer-events: none; /* para que los links funcionen sin problema */
+      pointer-events: none;
     }
 
+    /* Links invisibles posicionados */
     .link-zone {
       position: absolute;
       display: block;
       z-index: 10;
-      background-color: rgba(255, 0, 0, 0.3); /* rojo semitransparente */
-      border: 1px solid rgba(255, 0, 0, 0.6); /* borde rojo más fuerte */
+      background-color: rgba(255, 0, 0, 0.3); /* Solo para prueba */
+      border: 1px solid rgba(255, 0, 0, 0.6);
     }
 
     .swiper-slide:not(.swiper-slide-active) .link-zone {
       display: none;
     }
 
+    /* Botón de música */
     .music-button {
       position: fixed;
       bottom: 20px;
@@ -115,6 +126,7 @@
     </div>
   </div>
 
+  <!-- Botón de música -->
   <button id="play-button" class="music-button">🎵</button>
   <audio id="background-music" src="audio/music.mp3"></audio>
 
@@ -124,24 +136,6 @@
       direction: 'horizontal',
       loop: false,
       allowTouchMove: true
-    });
-
-    // Aumentar las zonas clickables un 30% centradas
-    document.querySelectorAll('.link-zone').forEach(el => {
-      const left = parseFloat(el.style.left);
-      const top = parseFloat(el.style.top);
-      const width = parseFloat(el.style.width);
-      const height = parseFloat(el.style.height);
-
-      const newWidth = width * 1.3;
-      const newHeight = height * 1.3;
-      const newLeft = left - (newWidth - width) / 2;
-      const newTop = top - (newHeight - height) / 2;
-
-      el.style.left = newLeft + '%';
-      el.style.top = newTop + '%';
-      el.style.width = newWidth + '%';
-      el.style.height = newHeight + '%';
     });
 
     document.getElementById("play-button").addEventListener("click", function() {

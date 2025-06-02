@@ -1,15 +1,18 @@
 html, body {
   margin: 0;
   padding: 0;
-  background: black;
-  height: 100%;
-  touch-action: manipulation;
+  height: 100dvh;
+  width: 100dvw;
   overflow: hidden;
+  background-color: black;
+  touch-action: manipulation;
 }
 
 .swiper, .swiper-wrapper, .swiper-slide {
-  width: 100vw;
-  height: 100dvh; /* Usa la altura real del viewport, evita la franja blanca */
+  width: 100dvw;
+  height: 100dvh;
+  margin: 0;
+  padding: 0;
 }
 
 .swiper-slide {
@@ -18,25 +21,26 @@ html, body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: black;
+  background-color: black;
 }
 
 .swiper-slide img {
-  width: 100vw;
+  width: 100dvw;
   height: 100dvh;
-  object-fit: cover; /* Llena el contenedor, puede recortar un poco */
-  user-select: none;
-  pointer-events: none;
+  object-fit: cover;
+  object-position: center;
   position: absolute;
   top: 0;
   left: 0;
+  user-select: none;
+  pointer-events: none;
 }
 
 .link-zone {
   position: absolute;
-  z-index: 10;
   display: block;
-  background-color: rgba(255, 0, 0, 0.3); /* rojo visible */
+  z-index: 10;
+  background-color: rgba(255, 0, 0, 0.3);
   border: 1px solid rgba(255, 0, 0, 0.6);
 }
 

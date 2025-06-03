@@ -14,15 +14,15 @@ html, body {
 }
 
 /* Swiper básico */
-.swiper, .swiper-wrapper, .swiper-slide {
+.swiper, .swiper-wrapper {
   width: 100vw;
   height: 100dvh;
-  overflow: visible; /* para que la animación pueda asomar */
+  overflow: visible; /* Para permitir asomar imagenes */
 }
 
 .swiper-slide {
   position: relative;
-  overflow: hidden;
+  overflow: visible; /* También visible para que la animación pueda desbordar */
 }
 
 /* Animación de movimiento suave horizontal para la primera imagen */

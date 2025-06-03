@@ -97,6 +97,10 @@ html, body {
   fill: rgb(80, 36, 25); /* color del ícono */
 }
 
+.music-button svg {
+  pointer-events: none;
+}
+
 .music-button.fade-out {
   opacity: 0;
   pointer-events: none;

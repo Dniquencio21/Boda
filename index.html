@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Invitación de Boda</title>
   <link rel="stylesheet" href="style.css" />
-  </head>
+</head>
 <body>
   <div class="swiper">
     <div class="swiper-wrapper">
@@ -62,20 +62,36 @@
     const swiper = new Swiper('.swiper', {
       direction: 'horizontal',
       loop: false,
-      allowTouchMove: true
+      allowTouchMove: true,
     });
 
     const playBtn = document.getElementById("play-button");
     const audio = document.getElementById("background-music");
     const firstSlideImg = document.querySelector(".swiper-slide:first-child img");
+    const swiperContainer = document.querySelector('.swiper');
+
+    const slide2BgColor = 'rgb(247, 230, 202)';
 
     playBtn.addEventListener("click", () => {
       audio.play();
       playBtn.classList.add("fade-out");
+
+      // Añadimos clase que mueve la imagen una vez
       firstSlideImg.classList.add("img-slide-shift");
+
+      // Cambiar fondo a color slide 2
+      swiperContainer.style.backgroundColor = slide2BgColor;
+
+      // Quitar botón luego de 1 segundo
       setTimeout(() => {
         playBtn.style.display = "none";
       }, 1000);
+
+      // Después de la animación (3.5s), volver fondo a negro y limpiar clase
+      setTimeout(() => {
+        swiperContainer.style.backgroundColor = "black";
+        firstSlideImg.classList.remove("img-slide-shift");
+      }, 3500);
     });
   </script>
 </body>

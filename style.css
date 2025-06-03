@@ -71,20 +71,31 @@ html, body {
     transform: scale(1.2);
   }
 }
+/* Botón de música animado, más grande y con efecto 3D */
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+}
 
 .music-button {
   position: fixed;
   bottom: 24px;
   right: 24px;
-  background-color: rgb(247, 230, 202); /* color de fondo personalizado */
+  background-color: rgb(247, 230, 202);
   border: none;
   border-radius: 50%;
-  width: 100px;
-  height: 100px;
+  width: 110px;   /* más grande */
+  height: 110px;
   cursor: pointer;
   z-index: 9999;
   animation: pulse 2.5s ease-in-out infinite;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); /* efecto 3D más fuerte */
+  box-shadow:
+    0 12px 25px rgba(0, 0, 0, 0.35), /* sombra más profunda */
+    inset 0 4px 6px rgba(255, 255, 255, 0.3); /* relieve interno */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -92,12 +103,9 @@ html, body {
 }
 
 .music-button svg {
-  width: 48px;   /* o el tamaño que quieras */
-  height: 48px;
+  width: 56px;   /* ícono más grande */
+  height: 56px;
   fill: rgb(80, 36, 25);
-}
-
-.music-button svg {
   pointer-events: none;
 }
 
@@ -105,9 +113,4 @@ html, body {
   opacity: 0;
   pointer-events: none;
   transition: opacity 1s ease;
-}
-
-.music-button.fade-out {
-  opacity: 0;
-  pointer-events: none;
 }

@@ -14,49 +14,51 @@ html, body {
 }
 
 /* Swiper básico */
-.swiper, .swiper-wrapper {
+.swiper, .swiper-wrapper, .swiper-slide {
   width: 100vw;
   height: 100dvh;
-  overflow: visible; /* Para permitir asomar imagenes */
 }
 
 .swiper-slide {
   position: relative;
-  overflow: visible; /* También visible para que la animación pueda desbordar */
+  overflow: hidden;
 }
 
-/* Animación de movimiento suave horizontal para la primera imagen */
-@keyframes slide-slight {
-  0%, 100% {
+/* Fondo color para swiper para evitar negro al desplazar imagen */
+.swiper {
+  background-color: rgb(247, 230, 202);
+}
+
+/* Imagen como fondo pantalla completa */
+.swiper-slide img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100dvh;
+  object-fit: cover;
+  user-select: none;
+  pointer-events: none;
+}
+
+/* Animación para desplazar la primera slide una sola vez */
+@keyframes slide-once {
+  0% {
     transform: translateX(0);
   }
-  50% {
-    transform: translateX(-15vw);
+  100% {
+    transform: translateX(-8vw);
   }
 }
 
+/* Primera imagen sin animación por defecto */
 .swiper-slide:first-child img {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100dvh;
-  object-fit: cover;
-  user-select: none;
-  pointer-events: none;
-  animation: slide-slight 3.5s ease-in-out infinite;
+  /* sin animación */
 }
 
-/* Otras imágenes */
-.swiper-slide:not(:first-child) img {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100dvh;
-  object-fit: cover;
-  user-select: none;
-  pointer-events: none;
+/* Cuando se le agrega clase se anima una vez */
+.swiper-slide:first-child img.img-slide-shift {
+  animation: slide-once 0.6s forwards ease-in-out;
 }
 
 /* Links invisibles posicionados */
@@ -66,12 +68,11 @@ html, body {
   z-index: 10;
 }
 
-/* Solo mostrar links en slide activa */
 .swiper-slide:not(.swiper-slide-active) .link-zone {
   display: none;
 }
 
-/* Animaciones para el botón de música */
+/* Botón de música animado */
 @keyframes fade-in {
   from { opacity: 0; }
   to { opacity: 1; }

@@ -19,6 +19,11 @@ html, body {
   height: 100dvh;
 }
 
+/* Fondo de swiper: el color que me pasaste */
+.swiper {
+  background-color: rgb(247, 230, 202);
+}
+
 .swiper-slide {
   position: relative;
   overflow: hidden;
@@ -34,23 +39,6 @@ html, body {
   object-fit: cover;
   user-select: none;
   pointer-events: none;
-}
-
-/* Animación de movimiento horizontal una vez */
-@keyframes slide-once {
-  0% {
-    transform: translateX(0);
-  }
-  50% {
-    transform: translateX(-8%);
-  }
-  100% {
-    transform: translateX(0);
-  }
-}
-
-.img-slide-shift {
-  animation: slide-once 3.5s ease-in-out forwards;
 }
 
 /* Links invisibles posicionados */
@@ -86,9 +74,9 @@ html, body {
   font-size: 36px;
   cursor: pointer;
   z-index: 9999;
+  transition: opacity 1s ease, transform 0.3s ease;
   box-shadow: 0 4px 8px rgba(0,0,0,0.2);
   animation: pulse 2.5s ease-in-out infinite;
-  transition: opacity 1s ease, transform 0.3s ease;
 }
 
 .music-button.fade-out {

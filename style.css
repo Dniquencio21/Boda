@@ -92,9 +92,9 @@ html, body {
 }
 
 .music-button svg {
-  width: 48px;
+  width: 48px;   /* o el tamaño que quieras */
   height: 48px;
-  fill: rgb(80, 36, 25); /* color del ícono */
+  fill: rgb(80, 36, 25);
 }
 
 .music-button svg {

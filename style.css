@@ -19,7 +19,7 @@ html, body {
   height: 100dvh;
 }
 
-/* Fondo de swiper */
+/* Fondo del carrusel */
 .swiper {
   background-color: rgb(247, 230, 202);
 }
@@ -29,7 +29,6 @@ html, body {
   overflow: hidden;
 }
 
-/* Imagen como fondo pantalla completa */
 .swiper-slide img {
   position: absolute;
   top: 0;
@@ -41,7 +40,7 @@ html, body {
   pointer-events: none;
 }
 
-/* Links invisibles posicionados */
+/* Links invisibles */
 .link-zone {
   position: absolute;
   display: block;
@@ -52,7 +51,7 @@ html, body {
   display: none;
 }
 
-/* Nudge de imagen */
+/* Animación de empujón */
 @keyframes slide-nudge {
   0% { transform: translateX(0); }
   40% { transform: translateX(-6%); }
@@ -63,34 +62,39 @@ html, body {
   animation: slide-nudge 1.5s ease-in-out;
 }
 
-/* Botón de música mejorado y tridimensional */
+/* Botón de música animado, más grande y con efecto 3D */
 @keyframes pulse {
   0%, 100% {
     transform: scale(1);
   }
   50% {
-    transform: scale(1.15);
+    transform: scale(1.2);
   }
 }
 
 .music-button {
   position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background-color: rgb(247, 230, 202);
-  border: 2px solid rgba(0, 0, 0, 0.1);
+  bottom: 24px;
+  right: 24px;
+  background-color: rgb(247, 230, 202); /* color de fondo personalizado */
+  border: none;
   border-radius: 50%;
-  width: 80px;
-  height: 80px;
-  font-size: 36px;
+  width: 100px;
+  height: 100px;
   cursor: pointer;
   z-index: 9999;
-  transition: opacity 1s ease, transform 0.3s ease;
-  box-shadow:
-    inset 0 2px 4px rgba(255, 255, 255, 0.6),
-    inset 0 -3px 5px rgba(0, 0, 0, 0.1),
-    0 4px 10px rgba(0, 0, 0, 0.3);
   animation: pulse 2.5s ease-in-out infinite;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); /* efecto 3D más fuerte */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease, opacity 1s ease;
+}
+
+.music-button svg {
+  width: 48px;
+  height: 48px;
+  fill: rgb(80, 36, 25); /* color del ícono */
 }
 
 .music-button.fade-out {
